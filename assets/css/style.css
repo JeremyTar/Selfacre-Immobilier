@@ -134,7 +134,9 @@ p {
 #topbar.topbar-scrolled {
   top: -40px;
 }
-
+#topbar .contact-info {
+  color: #fff;
+}
 #topbar .contact-info a {
   line-height: 1;
   color: #fff;
@@ -446,10 +448,10 @@ p {
 #hero {
   width: 100%;
   height: 90vh;
-  background: url("../img/Selfcare/banniere-family-home.jpg") top center;
+  background: url("../img/Selfcare/banniere2.jpg") top center;
   background-size: cover;
   position: relative;
-  margin-bottom: -150px;
+  margin-bottom: -200px;
 }
 
 #hero .container {
@@ -460,6 +462,7 @@ p {
 #hero img {
   width: 300px;
   height: 300px;
+  margin: 20px 0;
 }
 
 @media (max-width: 500px) {
@@ -477,15 +480,17 @@ p {
 }
 
 #hero h1 {
-  margin: 0;
+  margin: 5px 0;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   color: #02477D;
+  text-shadow: 2px 2px 5px #DEE2E2;
 }
 
 #hero h2 {
-  color: #02477D;
+  color: #E4B468;
+  text-shadow: 1px 1px 1px #02477D;
   margin: 10px 0 0 0;
   font-size: 24px;
 }
@@ -744,7 +749,7 @@ Courses
 # Teachers
 --------------------------------------------------------------*/
 .teachers {
-  background: url(../img/Selfcare/purchase-g2015be6b8_1920.jpg);
+  background-color: #DEE2E2;
 }
 
 .teacher::before {
@@ -776,7 +781,34 @@ Courses
   
 }
 
-.teachers .member:after {
+.deck__teachers {
+  margin:15px;
+  position:relative;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  border-radius:10px;
+  cursor: pointer;
+}
+.deck__teachers__cards {
+  width:100%;
+  height:100%;
+  max-width: 500px;
+  min-width: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+  border-radius:10px;
+}
+.member i {
+  color: #E4B468;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5em;
+}
+
+.deck__teachers__cards::before {
   content: "";
   position: absolute;
   top: 0;
@@ -784,6 +816,53 @@ Courses
   width: 50%;
   height: 100%;
   background: rgba(255, 255, 255, 0.03);
+}
+
+.back__teachers {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow:hidden;
+  z-index:-1;
+  display: block;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.back__teachers::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.back__teachers::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.back__teachers h3 {
+  color: #E4B468;
+}
+
+.back__teachers i {
+  color: #E4B468;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.5em;
 }
 
 .face {
@@ -961,6 +1040,7 @@ Courses
   -webkit-perspective: 1000px;
   perspective: 1000px;
   border-radius:10px;
+  cursor: pointer;
 }
 .card__pack{
   width:100%;
@@ -1046,6 +1126,8 @@ Courses
   left: 10px;
   color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  color: #E4B468;
+  font-size: 1.5em;
 }
 
 
@@ -1055,6 +1137,8 @@ Courses
   right: 10px;
   color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  color: #E4B468;
+  font-size: 1.5em;
 }
 
 
@@ -1383,12 +1467,27 @@ Courses
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
 }
 
-@media (max-width: 844px) {
-  
+@media (min-width: 650px) {
+  .cardContact:not(:first-child) {
+    margin-left: -50px;
+  }
+
+  .cardContact:hover {
+    transform: scale(1.1) translateY(-20px) ;
+    transition: 0.4s ease-out;
+  }
+
+  .cardContact:hover ~ .cardContact {
+    position: relative;
+    left: 60px;
+    transition: 0.4s ease-out;
+  }
 }
+
 .cardContact {
   display: flex;
   align-items: center;
@@ -1402,24 +1501,11 @@ Courses
   transition: 0.4s ease-out;
   position: relative;
   left: 0px;
-  margin: 0;
-  border: 2px solid #E4B468
+  border: 2px solid #E4B468;
+  margin: 15px 0;
 }
 
-.cardContact:not(:first-child) {
-    margin-left: -50px;
-}
 
-.cardContact:hover {
-  transform: scale(1.1) translateY(-20px) ;
-  transition: 0.4s ease-out;
-}
-
-.cardContact:hover ~ .cardContact {
-  position: relative;
-  left: 60px;
-  transition: 0.4s ease-out;
-} 
 
 .cardContact i {
   color: #E4B468;
