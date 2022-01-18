@@ -19,6 +19,8 @@
 body {
   font-family: "lato", sans-serif;
   color: #3F4756;
+  max-width: 1911px;
+  margin: auto;
 }
 
 a {
@@ -61,7 +63,7 @@ p {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #1977cc;
+  border: 6px solid #02477D;
   border-top-color: #d1e6f9;
   border-radius: 50%;
   width: 60px;
@@ -919,6 +921,7 @@ Courses
     justify-content: center;
     width: 100%;
     height: 150px;
+    margin-bottom: 15px;
   }
   .teachers .member .pic img {
     transition: ease-in-out 0.3s;
@@ -926,6 +929,7 @@ Courses
     height: 100%;
     width: 50%;
     min-width: 100px;
+    border-radius: 15px;
   }
 }
 
@@ -944,12 +948,16 @@ Courses
     width: 100%;
     min-width: 100px;
   }
+  .teachers .member .member-info {
+    width: 70%;
+  }
+  
 
   
 }
 
 .teachers .member .pic {
-  overflow: hidden;
+  overflow: hidden; 
   border-radius: 15px;
 }
 
@@ -1065,7 +1073,7 @@ Courses
   font-family: "athene";
   position: absolute;
   left: 50px;
-  top: 75px;
+  top: 85px;
   font-size: 2.5em;
 }
 .card__pack h4 {
@@ -1115,7 +1123,7 @@ Courses
 
 .back__pack p {
   position: absolute;
-  top: 150px;
+  top: 140px;
   color: #fff;
   text-align: center;
 }
@@ -1155,13 +1163,31 @@ Courses
 
 .front__pack p {
   position: absolute;
-  top: 150px;
+  top: 175px;
   text-align: center;
   color: #fff;
+  margin: 0 25px;
+  font-size: 1.2em;
 }
 
 .back__pack{
   box-shadow: 5px 5px 5px #aaa;
+}
+
+.back__pack p{
+  position: absolute;
+  top: 170px;
+  text-align: center;
+  color: #fff;
+  margin: 0 25px;
+}
+
+.back__pack .price {
+  position: absolute;
+  bottom: 40px;
+  font-family: 'Athene';
+  left: 110px;
+  font-size: 1.2em;
 }
 
 .activites {
@@ -1215,6 +1241,9 @@ Courses
   font-weight: 500;
 }
 
+.masque {
+  opacity: 0.2;
+}
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
@@ -1399,68 +1428,8 @@ Courses
 
 #contact {
   width: 100%;
-}
-
-.cardForm {
-  margin: 15px;
-}
-
-.form{
-  width:320px;
-  height:440px;
-  background:#DEE2E2;
-  border-radius:10px;
-  box-shadow: 5px 5px 5px #aaa;
-  padding:20px 30px;
-  max-width:calc(100vw - 40px);
-
-}
-
-.form h2{
-  margin:10px 0;
-  padding-bottom: 10px;
-  width:200px;
-  color:#78788c;
-  border-bottom:3px solid #3F4756
-}
-
-.form input{
-  width:100%;
-  padding:10px;
-  box-sizing:border-box;
-  background:none;
-  outline:none;
-  resize:none;
-  border:0;
-  transition:all .3s;
-  border-bottom:2px solid #bebed2
-}
-
-.form input:focus{
-  border-bottom:2px solid #3F4756
-}
-
-.form p:before{
-  content:attr(type);
-  display:block;
-  margin:28px 0 0;
-  font-size:14px;
-  color:#5a5a5a
-}
-.form button{
-  float:right;
-  padding:8px 12px;
-  margin:8px 0 0;
-  border:2px solid #3F4756;
-  background:0;
-  color:#3F4756;
-  cursor:pointer;
-  transition:all .3s;
-  border-radius: 10px;
-}
-.form button:hover{
-  background:#02477D;
-  color:#E4B468
+  display: flex;
+  flex-direction: column;
 }
 
 .contacts {
@@ -1493,8 +1462,8 @@ Courses
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 280px;
-  width: 200px;
+  height: 300px;
+  width: 250px;
   background-color: #02477D;
   border-radius: 10px;
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.38);

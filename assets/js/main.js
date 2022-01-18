@@ -172,27 +172,6 @@
     }
   });
   
-  $('#formModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text( recipient)
-  $('#formModal').find(".form-result").removeClass('d-block');
-})
-
-$("#sendMyForm").on("click", function(e){
-  e.preventDefault();
-  let frm="#"+$(e.target).data('submit');
-  $.post('post.php', 
-         $(frm).serialize(), 
-         function(data, status, xhr){
-           $('#formModal').find(".form-result").text(data);
-           $('#formModal').find(".form-result").addClass('d-block');
-        });
-
-});
 
 // flip card 
 $(".flip").click(function(){
@@ -202,5 +181,29 @@ $(".clickcard").click(function(){
   $(this).toggleClass("flipped");
 });
 
+// display services cards
+$(".clickcardEssential").click(function(){
+  $(".Photo").toggleClass("masque");
+  $(".Plan").toggleClass("masque");
+  $(".HomeStaging").toggleClass("masque");
+  $(".Phone").toggleClass("masque");
+  $(".Negociation").toggleClass("masque");
+  $(".Visite").toggleClass("masque");
+  $(".Notaire").toggleClass("masque");
+  $(".Conciergerie").toggleClass("masque");
+  $(".Financement").toggleClass("masque");
+});
+
+$(".clickcardConfiance").click(function(){
+  $(".Plan").toggleClass("masque");
+  $(".Phone").toggleClass("masque");
+  $(".Visite").toggleClass("masque");
+  $(".Conciergerie").toggleClass("masque");
+  $(".Financement").toggleClass("masque");
+});
+
+$(".clickcardSerenite").click(function(){
+  $(".Conciergerie").toggleClass("masque");
+});
 })(jQuery);
 
